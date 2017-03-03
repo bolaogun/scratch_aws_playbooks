@@ -2,7 +2,9 @@
 - hosts: all
   tasks:
     - name: Gather facts from Remote hosts
-      ec2_facts:
+      ec2_remote_facts:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
         validate_certs: no
       register: ec2Facts
       
