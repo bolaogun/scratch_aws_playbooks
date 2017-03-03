@@ -3,6 +3,7 @@
   tasks:
     - name: Gather facts from Remote hosts
       ec2_facts:
+        validate_certs: no
       register: ec2Facts
       
     - debug:
