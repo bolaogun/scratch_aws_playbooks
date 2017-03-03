@@ -1,8 +1,11 @@
 ---
 - hosts: all
   tasks:
-    - name: Retrieve Variables from Remote hosts
-      debug:
-        var: hostvars[inventory_hostname]
+    - name: Gather facts from Remote hosts
+      ec2_facts:
+      register: ec2Facts
+      
+    - debug:
+        var: ec2Facts
         verbosity: 2
       
