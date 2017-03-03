@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: Retrieve Variables from Remote hosts
+      setup:
+      tags: 
+        - setup
+      
+      
