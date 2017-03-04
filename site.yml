@@ -13,7 +13,8 @@
         validate_certs: no
       register: ec2Facts
       
-    - debug:
+    - name: Display Debug Message when Verbosity is set to 2 
+      debug:
         var: ec2Facts
         verbosity: 2
       
