@@ -1,0 +1,12 @@
+---
+- include_vars: passwd_hash.yml
+# generate hash (after installing passlib) by using the command below:
+# python -c "from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())"
+#
+- name: Ensure user exist with particular password
+  user:
+    name: "{{ usr }}"
+    state: present 
+    update_password: always 
+    password: "{{ passwd_hash }}"
+    shell: /bin/bash
