@@ -21,5 +21,5 @@
         name: "{{ usr }}"
         state: present 
         update_password: always 
-        password: '<hash value of passwd>'
+        password: $6$rounds=656000$w91nghiFOmpdEEPE$sHJWfEbgT9a/IC18Ec4ID4N5WnbDkjp5y6uaORBjuWv9O07DQVLVY18oIzzs6oBaKhzNoRhQsbgtHK1qC2FOT.
         shell: /bin/bash
