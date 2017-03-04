@@ -1,5 +1,9 @@
 ---
 - hosts: all
+   tasks:
+      - group_by: key= {{ ec2_key_name }}
+      
+- hosts: "{{ pattern | default('all') }}"
   tasks:
     - name: Gather facts from Remote hosts
       ec2_facts:
