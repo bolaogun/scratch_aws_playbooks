@@ -8,7 +8,7 @@
     vars:
       instance_type: t2.micro
       security_group: ansible_srv_sec_grp # Change the security group name here
-      image: ami-a58d0dc5 # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type 
+      image: ami-f173cc91 # Amazon Linux AMI 2016.09.1 (HVM), SSD Volume 
       region: us-west-2 # Change the Region
       keyname: vagrant # Change the keypair name
       count: 1
