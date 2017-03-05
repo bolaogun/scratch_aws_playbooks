@@ -1,0 +1,16 @@
+---
+# This playbook may be used to change the password for an account in a static inventory
+# It overrrides the value for the hosts targetted based upon inputted value
+- hosts:
+    - "{{ host }}"
+  become: yes
+  become_method: sudo
+  vars_prompt:
+    - name: "usr"
+      prompt: "Which users password do you wish to change?"
+      private: no
+    - name: "host"
+      prompt: "Which hosts do you wish the password changed upon?"
+      private: no
+  roles:
+    - role: change_aws_usr_passwds
