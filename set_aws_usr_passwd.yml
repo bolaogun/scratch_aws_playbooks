@@ -7,5 +7,7 @@
            key: "{{ ec2_key_name }}"
 
 - hosts: "{{ pattern | default('all') }}"
+  become: yes
+  become_method: sudo
   roles: 
     - role: change_aws_usr_passwds
