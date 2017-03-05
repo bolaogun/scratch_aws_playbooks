@@ -6,7 +6,7 @@
     tags: provisioning
     # Necessary Variables for creating/provisioning the EC2 Instance
     vars:
-      instance_type: t1.micro
+      instance_type: t2.micro
       security_group: ansible_srv_sec_grp # Change the security group name here
       image: ami-a58d0dc5 # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type 
       region: us-west-2 # Change the Region
@@ -24,7 +24,7 @@
           region: "{{ region }}"
           rules:
             - proto: tcp
-              type: ssh
+#              type: ssh
               from_port: 22
               to_port: 22
               cidr_ip: 0.0.0.0/0
@@ -34,7 +34,7 @@
               cidr_ip: 0.0.0.0/0
           rules_egress:
             - proto: all
-              type: all
+#              type: all
               cidr_ip: 0.0.0.0/0
 
 
