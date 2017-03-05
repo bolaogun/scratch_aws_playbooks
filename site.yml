@@ -7,5 +7,5 @@
            key: "{{ ec2_key_name }}"
 
 - hosts: "{{ pattern | default('all') }}"
-
-- include: change_aws_usr_passwds
+  roles: 
+    - role: change_aws_usr_passwds
