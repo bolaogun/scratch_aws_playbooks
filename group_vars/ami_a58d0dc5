@@ -1,2 +1,4 @@
 ---
 ansible_ssh_user: ubuntu
+# To handle Non existence of python 2.x on 16.## Ubuntu Server
+ansible_python_interpreter: /usr/bin/python3
