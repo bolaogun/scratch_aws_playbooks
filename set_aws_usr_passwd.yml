@@ -7,6 +7,7 @@
            key: "{{ ec2_key_name }}"
 
 - hosts: "{{ pattern | default('all') }}"
+  gather_facts: False
   become: yes
   become_method: sudo
   roles: 
