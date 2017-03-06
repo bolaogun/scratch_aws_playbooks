@@ -6,7 +6,8 @@
 - name: Ensure user exist with particular password
   user:
     name: "{{ usr }}"
-    state: present 
+    state: present
+    home: "/home/{{ usr }}"
     update_password: always 
     password: "{{ passwd_hash }}"
     shell: /bin/bash
