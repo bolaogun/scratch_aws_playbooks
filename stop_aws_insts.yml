@@ -6,7 +6,7 @@
   connection: local
   vars:
     sec_groups: 
-	    - 'security_group_ansible_srv_sec_grp'
+      - 'ansible_srv_sec_grp'
       - 'launch-wizard-3'
 
     region: us-west-2
