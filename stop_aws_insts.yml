@@ -1,0 +1,19 @@
+---
+
+#  name: Stop sandbox instances
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    sec_groups: 
+	    - 'security_group_ansible_srv_sec_grp'
+      - 'launch-wizard-3'
+
+    region: us-west-2
+  tasks:
+    - name: Stop the sandbox instances
+      ec2:
+        group: '{{ sec_groups }}'
+        region: '{{ region }}'
+        state: stopped
+        wait: True
