@@ -5,15 +5,14 @@
   gather_facts: false
   connection: local
   vars:
-    sec_groups: 
-      - 'ansible_srv_sec_grp'
-      - 'launch-wizard-3'
-
+    instance_ids:
+      - 'ansible_crtd_inst'
+      - 'ansible_crtd_inst_01'
     region: us-west-2
   tasks:
     - name: Stop the sandbox instances
       ec2:
-        group: '{{ sec_groups }}'
+        instance_ids: '{{ instance_ids }}'
         region: '{{ region }}'
         state: stopped
         wait: True
