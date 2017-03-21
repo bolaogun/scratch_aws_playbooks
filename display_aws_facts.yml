@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: False
+  tasks:
+    - name: Run Setup Module and Capture Output
+      ec2_remote_facts:
+      register: ec2Facts
+
+    - name: Display Debug Message when Verbosity is set to 2
+      debug:
+        var: ec2Facts
+        verbosity: 2
