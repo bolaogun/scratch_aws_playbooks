@@ -5,7 +5,7 @@
     # gathers facts and registers the output as `ec2_facts`
     - name: Gather EC2 facts.
       ec2_remote_facts:
-      region: "{{ region | default(us-west-2) }}"
+        region: "{{ region | default(us-west-2) }}"
       register: ec2_facts
 
     # debug that output
