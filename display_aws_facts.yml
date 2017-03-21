@@ -2,11 +2,14 @@
 - hosts: all
   gather_facts: False
   tasks:
-    - name: Run Setup Module and Capture Output
+    # gathers facts and registers the output as `ec2_facts`
+    - name: Gather EC2 facts.
       ec2_remote_facts:
-      register: ec2Facts
+      region: "{{ region | default(us-west-2) }}"
+      register: ec2_facts
 
+    # debug that output
     - name: Display Debug Message when Verbosity is set to 2
       debug:
-        var: ec2Facts
+        msg: "{{ aws_ec2_facts }}"
         verbosity: 2
