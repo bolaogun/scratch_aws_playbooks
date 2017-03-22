@@ -1,0 +1,2 @@
+---
+ansible_ssh_private_keyfile : "{{ lookup('env','HOME') }}/.ssh/vagrant.pem"
