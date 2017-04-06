@@ -6,7 +6,7 @@
      group: "{{ security_group }}"
      instance_type: "{{ instance_type }}"
      image: "{{ image }}"
-     vpc_subnet_id: "{{ subnet_ids|random }}"
+#     vpc_subnet_id: "{{ subnet_ids|random }}"
      region: "{{ region }}"
      instance_tags: '{"Name":"{{tag_Name}}","Type":"{{tag_Type}}","Environment":"{{tag_Environment}}"}'
      assign_public_ip: yes
