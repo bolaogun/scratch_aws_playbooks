@@ -1,9 +1,8 @@
-ec2_keypair: "vagrant"
-ec2_security_group: "ansible_srv_sec_grp"
-ec2_instance_type: "t2.micro"
-ec2_image: "ami-f173cc91"
-#ec2_subnet_ids: ['subnet-REDACTED','subnet-REDACTED','subnet-REDACTED']
-ec2_region: "us-west-2"
-ec2_tag_Name: "GenericServer"
-ec2_tag_Type: "genericServer"
-ec2_tag_Environment: "development"
+key_name: vagrant
+security_group: "ansible_srv_sec_grp"
+instance_type: "t2.micro"
+image: "ami-f173cc91"
+region: "us-west-2"
+tag_Name: "GenericServer"
+tag_Type: "genericServer"
+tag_Environment: "development"

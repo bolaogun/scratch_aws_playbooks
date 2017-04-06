@@ -2,13 +2,13 @@
  - name: Provision EC2 Box
    local_action:
      module: ec2
-     key_name: "{{ ec2_keypair }}"
-     group_id: "{{ ec2_security_group }}"
-     instance_type: "{{ ec2_instance_type }}"
-     image: "{{ ec2_image }}"
+     key_name: "{{ key_name }}"
+     group: "{{ security_group }}"
+     instance_type: "{{ instance_type }}"
+     image: "{{ image }}"
 #     vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
-     region: "{{ ec2_region }}"
-     instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment}}"}'
+     region: "{{ region }}"
+     instance_tags: '{"Name":"{{tag_Name}}","Type":"{{tag_Type}}","Environment":"{{tag_Environment}}"}'
      assign_public_ip: yes
      wait: true
      count: 1
@@ -23,11 +23,11 @@
    with_items: ec2.instances
 
  - add_host: name={{ item.public_ip }} >
-             groups=tag_Type_{{ec2_tag_Type}},tag_Environment_{{ec2_tag_Environment}}
-             ec2_region={{ec2_region}} 
-             ec2_tag_Name={{ec2_tag_Name}}
-             ec2_tag_Type={{ec2_tag_Type}}
-             ec2_tag_Environment={{ec2_tag_Environment}}
+             groups=tag_Type_{{tag_Type}},tag_Environment_{{tag_Environment}}
+             ec2_region={{region}} 
+             ec2_tag_Name={{tag_Name}}
+             ec2_tag_Type={{tag_Type}}
+             ec2_tag_Environment={{ag_Environment}}
              ec2_ip_address={{item.public_ip}}
    with_items: ec2.instances
 
