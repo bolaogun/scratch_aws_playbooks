@@ -1,2 +1,3 @@
 ---
-- include: set_aws_usr_passwd.yml
+#- include: set_aws_usr_passwd.yml
+- include: provision_ec2_frm_tower 
