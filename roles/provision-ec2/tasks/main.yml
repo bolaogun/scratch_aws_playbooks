@@ -6,10 +6,10 @@
      group: "{{ security_group }}"
      instance_type: "{{ instance_type }}"
      image: "{{ image }}"
-#     vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
+     vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
      region: "{{ region }}"
      instance_tags: '{"Name":"{{tag_Name}}","Type":"{{tag_Type}}","Environment":"{{tag_Environment}}"}'
-#     assign_public_ip: yes
+     assign_public_ip: yes
      wait: true
      count: 1
 #     volumes: 
