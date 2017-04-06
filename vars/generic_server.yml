@@ -2,6 +2,7 @@ key_name: vagrant
 security_group: "ansible_srv_sec_grp"
 instance_type: "t2.micro"
 image: "ami-f173cc91"
+subnet_ids: ['subnet-841ed4cd','subnet-5b695f03','subnet-eb4dfd8c']
 region: "us-west-2"
 tag_Name: "GenericServer"
 tag_Type: "genericServer"
