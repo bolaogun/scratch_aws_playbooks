@@ -1,0 +1,28 @@
+---
+- name: Switch AWS roles to CDG_SYSOPS
+  hosts: local
+  connection: local
+  gather_facts: False
+  tags: role switching
+  # Necessary Variables maybe 
+  vars:
+    partition: aws
+    service: iam
+    # region: eu-west-1  # left empt for IAM resources
+    account: 725270078260
+    resource: "role/CDG_SYSOPS"
+  # Task  to switch roles
+  tasks:
+
+    - name: Switch role
+      sts_assume_role:
+        role_arn: "arn:{{ partition }}:{{ servcie }}::{{ account }}:{{ resource }}"
+        role_session_name: "roleAcquired"
+      register: assumed_role        
+
+
+    - name: Display the details of the role just acquired
+      debug: 
+        var: assumed_role
+        verbosity: 3
+
